@@ -43,7 +43,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
             <div>
               <h3 className="text-sm font-bold text-white">Krish Rawal — Verified Resume</h3>
-              <p className="text-[11px] text-slate-400 font-mono">1-Page A4 • ATS-Optimized • Frontend & React Native</p>
+              <p className="text-[11px] text-slate-400 font-mono">ATS-Optimized • Frontend & React Native</p>
             </div>
           </div>
 
@@ -51,8 +51,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <a
               href="/Krish_Rawal_Resume.pdf"
               download="Krish_Rawal_Resume.pdf"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-md transition-all cursor-pointer"
-              title="Directly download Krish_Rawal_Resume.pdf"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
+              title="Download 1-Page A4 PDF directly"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Download PDF</span>
@@ -60,11 +60,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-all border border-slate-700"
-              title="Open printable tab view"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold border border-slate-700 transition-all"
+              title="Open print-ready view to save as PDF"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span>Print View</span>
+              <span>Print A4</span>
             </button>
 
             <button
@@ -245,22 +245,23 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
         {/* Modal Footer */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-6 py-4 border-t border-slate-800 bg-slate-950/80">
-          <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
+          <div className="flex items-center gap-2.5 w-full sm:w-auto">
             <a
               href="/Krish_Rawal_Resume.pdf"
               download="Krish_Rawal_Resume.pdf"
-              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/30 transition-all cursor-pointer"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
             >
               <Download className="w-4 h-4" />
-              <span>Download PDF Directly</span>
+              <span>Direct Download PDF (1-Page A4)</span>
             </a>
 
             <button
               onClick={handlePrint}
-              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-all border border-slate-700"
+              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold border border-slate-700 transition-all"
             >
               <Printer className="w-4 h-4" />
-              <span>Print View</span>
+              <span className="hidden sm:inline">Print / Web View</span>
+              <span className="sm:hidden">Print</span>
             </button>
           </div>
 
