@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
   Sparkles, 
@@ -17,6 +17,13 @@ interface HeroProps {
   onContactClick: () => void;
 }
 
+const titles = [
+  "Frontend & React Native Developer",
+  "Expo SDK 52 Mobile Architect",
+  "Cross-Platform App Specialist",
+  "TypeScript & NativeWind Pro"
+];
+
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
   <svg 
     viewBox="0 0 24 24" 
@@ -29,6 +36,34 @@ const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" 
 
 export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
   const { personal } = portfolioData;
+
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentFullTitle = titles[titleIndex];
+    let timer: ReturnType<typeof setTimeout>;
+
+    if (!isDeleting && displayText.length < currentFullTitle.length) {
+      timer = setTimeout(() => {
+        setDisplayText(currentFullTitle.substring(0, displayText.length + 1));
+      }, 70);
+    } else if (!isDeleting && displayText.length === currentFullTitle.length) {
+      timer = setTimeout(() => {
+        setIsDeleting(true);
+      }, 2000);
+    } else if (isDeleting && displayText.length > 0) {
+      timer = setTimeout(() => {
+        setDisplayText(currentFullTitle.substring(0, displayText.length - 1));
+      }, 35);
+    } else if (isDeleting && displayText.length === 0) {
+      setIsDeleting(false);
+      setTitleIndex((prev) => (prev + 1) % titles.length);
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, titleIndex]);
 
   return (
     <section className="relative pt-24 sm:pt-32 pb-16 lg:pb-24 overflow-hidden">
@@ -69,14 +104,24 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               </div>
             </div>
 
-            {/* Main Headline */}
-            <div className="space-y-3">
+            {/* Main Headline with Dynamic Typing & Shimmer Animation */}
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-mono text-cyan-300">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                <span>Crafting 60fps Native Mobile Experiences</span>
+              </div>
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
-                Hi, I'm <span className="bg-gradient-to-r from-brand-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">{personal.name}</span>
-                <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-300 mt-2 font-mono">
-                  Frontend & Mobile Developer
+                Hi, I'm <span className="animated-gradient-text">{personal.name}</span>
+                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-mono text-slate-200 mt-2.5 flex items-center justify-center lg:justify-start min-h-[44px]">
+                  <span className="text-cyan-400 mr-2 text-base sm:text-xl font-normal">&gt;</span>
+                  <span className="bg-gradient-to-r from-cyan-400 via-brand-300 to-indigo-300 bg-clip-text text-transparent">
+                    {displayText}
+                  </span>
+                  <span className="terminal-cursor inline-block w-2.5 h-6 sm:h-8 bg-cyan-400 ml-1.5 rounded-sm"></span>
                 </span>
               </h1>
+              
               <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
                 Building fast, responsive web applications with <strong className="text-white font-semibold">React & TypeScript</strong>, and high-performance cross-platform mobile apps for iOS and Android with <strong className="text-cyan-400 font-semibold">React Native</strong> & <strong className="text-brand-400 font-semibold">Expo SDK 52</strong>.
               </p>
