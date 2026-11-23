@@ -6,9 +6,10 @@ interface NavbarProps {
   darkMode: boolean;
   setDarkMode: (val: boolean) => void;
   onContactClick: () => void;
+  onResumeClick: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onContactClick }) => {
+export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onContactClick, onResumeClick }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -97,12 +98,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onContact
             </button>
 
             {/* Resume button */}
-            <a
-              href="#resume"
-              onClick={(e) => {
-                e.preventDefault();
-                alert("Download Resume triggered! You can link your PDF resume here in portfolioData.ts");
-              }}
+            <button
+              onClick={onResumeClick}
               className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold border transition-all ${
                 darkMode
                   ? 'border-slate-700 bg-slate-900/80 text-slate-200 hover:bg-slate-800 hover:border-slate-600'
@@ -111,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onContact
             >
               <FileText className="w-3.5 h-3.5 text-brand-400" />
               <span>Resume</span>
-            </a>
+            </button>
 
             {/* Let's Talk CTA */}
             <button
@@ -156,6 +153,16 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onContact
                 {link.label}
               </a>
             ))}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onResumeClick();
+              }}
+              className="w-full mt-2 px-3 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 text-brand-400 bg-brand-500/10 border border-brand-500/20"
+            >
+              <FileText className="w-4 h-4" />
+              <span>View & Print Resume</span>
+            </button>
           </div>
         )}
       </div>

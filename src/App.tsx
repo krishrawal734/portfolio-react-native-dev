@@ -8,6 +8,7 @@ import { Experience } from './components/Experience';
 import { GithubActivity } from './components/GithubActivity';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { ResumeModal } from './components/ResumeModal';
 import { portfolioData } from './data/portfolioData';
 
 const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
@@ -21,6 +22,7 @@ const WhatsAppIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" 
 );
 
 export const App: React.FC = () => {
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     const saved = localStorage.getItem('rn_portfolio_theme');
     return saved !== null ? saved === 'dark' : true;
@@ -49,6 +51,7 @@ export const App: React.FC = () => {
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         onContactClick={handleContactClick}
+        onResumeClick={() => setResumeModalOpen(true)}
       />
 
       <main>
@@ -62,6 +65,12 @@ export const App: React.FC = () => {
       </main>
 
       <Footer />
+
+      {/* Interactive In-Browser Resume Modal */}
+      <ResumeModal
+        isOpen={resumeModalOpen}
+        onClose={() => setResumeModalOpen(false)}
+      />
 
       {/* Floating WhatsApp Quick Action Button */}
       <a
