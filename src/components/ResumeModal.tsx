@@ -48,23 +48,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           </div>
 
           <div className="flex items-center gap-2">
-            <a
-              href="/Krish_Rawal_Resume.pdf"
-              download="Krish_Rawal_Resume.pdf"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
-              title="Download 1-Page A4 PDF directly"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>Download PDF</span>
-            </a>
-
             <button
               onClick={handlePrint}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold border border-slate-700 transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold shadow-md transition-all"
               title="Open print-ready view to save as PDF"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span>Print A4</span>
+              <span>Print / Save PDF</span>
             </button>
 
             <button
@@ -244,30 +234,18 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Modal Footer */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-6 py-4 border-t border-slate-800 bg-slate-950/80">
-          <div className="flex items-center gap-2.5 w-full sm:w-auto">
-            <a
-              href="/Krish_Rawal_Resume.pdf"
-              download="Krish_Rawal_Resume.pdf"
-              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
-            >
-              <Download className="w-4 h-4" />
-              <span>Direct Download PDF (1-Page A4)</span>
-            </a>
-
-            <button
-              onClick={handlePrint}
-              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold border border-slate-700 transition-all"
-            >
-              <Printer className="w-4 h-4" />
-              <span className="hidden sm:inline">Print / Web View</span>
-              <span className="sm:hidden">Print</span>
-            </button>
-          </div>
+        <div className="flex items-center justify-between px-6 py-4 border-t border-slate-800 bg-slate-950/80">
+          <button
+            onClick={handlePrint}
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold shadow-md transition-all"
+          >
+            <Download className="w-4 h-4" />
+            <span>Download PDF / Print</span>
+          </button>
 
           <button
             onClick={onClose}
-            className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-all border border-slate-800"
+            className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-all"
           >
             Close Preview
           </button>
