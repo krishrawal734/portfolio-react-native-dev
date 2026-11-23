@@ -10,7 +10,7 @@
   <style>
     @page {
       size: A4 portrait;
-      margin: 8mm 10mm;
+      margin: 7mm 9mm;
     }
     * {
       box-sizing: border-box;
@@ -23,13 +23,13 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: #f1f5f9;
       color: #0f172a;
-      line-height: 1.35;
-      font-size: 11px;
-      padding: 24px 12px;
+      line-height: 1.32;
+      font-size: 9.5px;
+      padding: 16px 8px;
     }
     .print-bar {
       max-width: 210mm;
-      margin: 0 auto 16px auto;
+      margin: 0 auto 14px auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -60,10 +60,9 @@
     .page {
       width: 210mm;
       max-width: 210mm;
-      min-height: 297mm;
       margin: 0 auto;
       background: #ffffff;
-      padding: 12mm 14mm;
+      padding: 7mm 9mm;
       border-radius: 6px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
@@ -71,14 +70,14 @@
     /* Resume Structure */
     .header {
       border-bottom: 2px solid #4f46e5;
-      padding-bottom: 8px;
-      margin-bottom: 8px;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
     }
     .name-title h1 {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
       letter-spacing: -0.02em;
       color: #0f172a;
@@ -86,22 +85,22 @@
       line-height: 1.1;
     }
     .name-title h2 {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: #4f46e5;
-      margin-top: 3px;
+      margin-top: 2px;
     }
     .sub-meta {
-      font-size: 10px;
+      font-size: 9.2px;
       color: #64748b;
-      margin-top: 2px;
+      margin-top: 1.5px;
       font-weight: 500;
     }
     .contact-info {
       text-align: right;
-      font-size: 10px;
+      font-size: 9.8px;
       color: #475569;
-      line-height: 1.5;
+      line-height: 1.48;
     }
     .contact-info a {
       color: #0f172a;
@@ -115,22 +114,22 @@
 
     /* Sections */
     .section {
-      margin-bottom: 7px;
+      margin-bottom: 4.5px;
     }
     .section-title {
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #4f46e5;
-      border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 2px;
-      margin-bottom: 4px;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 1.5px;
+      margin-bottom: 3px;
     }
     .summary-text {
       color: #334155;
-      font-size: 10.5px;
-      line-height: 1.4;
+      font-size: 9.5px;
+      line-height: 1.34;
       text-align: justify;
     }
 
@@ -138,17 +137,17 @@
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 3px 14px;
-      font-size: 10px;
+      gap: 2px 14px;
+      font-size: 9.5px;
     }
     .skill-item {
       display: flex;
-      line-height: 1.35;
+      line-height: 1.32;
     }
     .skill-label {
       font-weight: 700;
       color: #0f172a;
-      min-width: 110px;
+      min-width: 115px;
     }
     .skill-val {
       color: #475569;
@@ -156,7 +155,7 @@
 
     /* Entries */
     .entry {
-      margin-bottom: 5px;
+      margin-bottom: 3.5px;
     }
     .entry:last-child {
       margin-bottom: 0;
@@ -165,11 +164,11 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
     .role-title {
       font-weight: 700;
-      font-size: 11px;
+      font-size: 10.5px;
       color: #0f172a;
     }
     .company {
@@ -177,7 +176,7 @@
       color: #4f46e5;
     }
     .date-location {
-      font-size: 9.5px;
+      font-size: 9px;
       color: #64748b;
       font-family: 'JetBrains Mono', monospace;
     }
@@ -185,30 +184,30 @@
       list-style-type: disc;
       padding-left: 14px;
       color: #334155;
-      font-size: 10px;
-      line-height: 1.35;
+      font-size: 9.3px;
+      line-height: 1.32;
     }
     .bullets li {
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
     .tech-pill-list {
       display: flex;
       flex-wrap: wrap;
       gap: 3px;
-      margin-top: 2.5px;
+      margin-top: 1.5px;
     }
     .tech-pill {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 8.5px;
+      font-size: 8px;
       background: #f1f5f9;
       color: #475569;
-      padding: 1px 5px;
+      padding: 1px 4.5px;
       border-radius: 3px;
       border: 1px solid #e2e8f0;
       font-weight: 500;
     }
     .project-link {
-      font-size: 9.5px;
+      font-size: 9px;
       color: #4f46e5;
       text-decoration: none;
       margin-left: 4px;
@@ -250,7 +249,7 @@
   <div class="print-bar">
     <div>
       <span style="font-weight: 700; font-size: 13px;">Krish Rawal — 1-Page A4 Resume</span>
-      <span style="display: block; font-size: 11px; color: #94a3b8;">ATS-Optimized • Fits Single Page A4</span>
+      <span style="display: block; font-size: 11px; color: #94a3b8;">ATS-Optimized • Perfectly Fits Single Page A4</span>
     </div>
     <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
       <a href="/" style="color: #94a3b8; text-decoration: none; font-size: 11px; margin-right: 6px;">← Portfolio</a>
@@ -280,7 +279,7 @@
       <div class="contact-info">
         <div>Email: <a href="mailto:rawalkrish734@gmail.com">rawalkrish734@gmail.com</a></div>
         <div>WhatsApp / Phone: <a href="https://wa.me/919549078734">+91 95490 78734</a></div>
-        <div>GitHub: <a href="https://github.com/krishrawal734" target="_blank">github.com/krishrawal734</a> (63+ Repos)</div>
+        <div>GitHub: <a href="https://github.com/krishrawal734" target="_blank">github.com/krishrawal734</a> (63+ Repositories)</div>
         <div>LinkedIn: <a href="https://www.linkedin.com/in/krish-rawal-8ab87339b/" target="_blank">linkedin.com/in/krish-rawal</a></div>
       </div>
     </header>
@@ -289,7 +288,7 @@
     <section class="section">
       <h3 class="section-title">Professional Summary</h3>
       <p class="summary-text">
-        Performance-driven <strong>Frontend & Cross-Platform Mobile Developer</strong> with hands-on expertise building 60fps native iOS and Android apps using <strong>React Native</strong> and <strong>Expo SDK 52</strong>, alongside responsive web applications built with <strong>React.js</strong> and <strong>TypeScript</strong>. Experienced in native device integrations (anti-fraud mock location GPS detection, camera workflows, dynamic statement PDF export, and biometric auth) and real-time backend integrations with Supabase and RESTful APIs. Active creator maintaining <strong>63+ public repositories</strong> on GitHub.
+        High-impact <strong>Frontend & Cross-Platform Mobile Developer</strong> with specialized expertise in architecting 60fps native iOS and Android applications using <strong>React Native</strong> and <strong>Expo SDK 52</strong>, alongside modern, responsive web applications built with <strong>React.js</strong> and <strong>TypeScript</strong>. Experienced in enterprise-grade workflows including geofenced anti-fraud mock location detection, native PDF statement generation, offline persistence, and real-time backend integrations with <strong>Supabase</strong> and WebSockets. Creator of <strong>63+ open-source repositories</strong> on GitHub with a focus on clean modular code and scalable architecture.
       </p>
     </section>
 
@@ -299,27 +298,27 @@
       <div class="skills-grid">
         <div class="skill-item">
           <span class="skill-label">Mobile Frameworks:</span>
-          <span class="skill-val">React Native, Expo SDK 52, Expo Router v4, NativeWind, Tailwind CSS</span>
+          <span class="skill-val">React Native, Expo SDK 52, Expo Router v4, NativeWind (Tailwind CSS), EAS OTA</span>
         </div>
         <div class="skill-item">
           <span class="skill-label">Web & Languages:</span>
-          <span class="skill-val">TypeScript, JavaScript (ES6+), React.js, HTML5, CSS3/Tailwind</span>
+          <span class="skill-val">TypeScript, JavaScript (ES6+), React.js, Next.js basics, HTML5, CSS3/Tailwind</span>
         </div>
         <div class="skill-item">
           <span class="skill-label">Native Device APIs:</span>
-          <span class="skill-val">expo-location (Anti-Fraud GPS), expo-print, expo-sharing, Async Storage</span>
+          <span class="skill-val">expo-location (Mock GPS Guard), expo-print, expo-sharing, AsyncStorage, Biometrics</span>
         </div>
         <div class="skill-item">
-          <span class="skill-label">State & Data:</span>
-          <span class="skill-val">Redux Toolkit, Context API, Supabase (PostgreSQL, RLS), TanStack Query</span>
+          <span class="skill-label">State & Databases:</span>
+          <span class="skill-val">Redux Toolkit, Context API, Supabase (PostgreSQL, Row-Level Security), TanStack Query</span>
         </div>
         <div class="skill-item">
           <span class="skill-label">APIs & Protocols:</span>
-          <span class="skill-val">RESTful APIs, Axios, WebSockets (Real-Time Chat), JWT Auth</span>
+          <span class="skill-val">RESTful APIs, Axios, WebSockets (Real-Time Messaging), JWT Authentication</span>
         </div>
         <div class="skill-item">
           <span class="skill-label">DevOps & Tooling:</span>
-          <span class="skill-val">EAS Build & Updates (OTA), Git, GitHub, Vite, Vercel, Maestro E2E</span>
+          <span class="skill-val">EAS Build & Submit, Git, GitHub (63+ Repos), Vite, Vercel, Postman, Maestro E2E</span>
         </div>
       </div>
     </section>
@@ -337,10 +336,10 @@
           <span class="date-location">2025 - Present | Ahmedabad, India</span>
         </div>
         <ul class="bullets">
-          <li>Architected cross-platform mobile apps using <strong>React Native</strong>, <strong>Expo SDK 52</strong>, and <strong>TypeScript</strong> with modular feature-first architecture.</li>
-          <li>Engineered <strong>WorkPulse</strong> attendance & payroll mobile application featuring reverse-geocoded check-in, anti-fraud mock location detection, and automated 19:00 night shift overtime logic.</li>
-          <li>Integrated <strong>Supabase</strong> with Row-Level Security (RLS) policies and real-time database listeners for seamless multi-tenant authentication.</li>
-          <li>Built unified responsive component systems with <strong>NativeWind</strong> and <strong>Tailwind CSS</strong>, ensuring exact design consistency across iOS, Android, and Web.</li>
+          <li>Architected and delivered cross-platform mobile apps using <strong>React Native</strong>, <strong>Expo SDK 52</strong>, and <strong>TypeScript</strong> following strict feature-based modular folder architecture.</li>
+          <li>Engineered <strong>WorkPulse</strong> attendance & payroll mobile client featuring reverse geocoding, mock location anti-fraud detection via <code>expo-location</code>, and automated 19:00 night shift overtime logic.</li>
+          <li>Integrated <strong>Supabase</strong> with Row-Level Security (RLS) policies and real-time database listeners for multi-tenant data isolation and instantaneous state syncing.</li>
+          <li>Standardized cross-platform UI components using <strong>NativeWind</strong> and <strong>Tailwind CSS</strong>, achieving complete design system parity across iOS, Android, and Web platforms.</li>
         </ul>
         <div class="tech-pill-list">
           <span class="tech-pill">React Native</span>
@@ -357,26 +356,27 @@
       <div class="entry">
         <div class="entry-header">
           <div>
-            <span class="role-title">Frontend Developer Intern</span> • <span class="company"><a href="https://www.trentiums.com/" target="_blank" style="color:#4f46e5; text-decoration: none;">Trentium Solution</a></span>
+            <span class="role-title">Frontend Developer Intern</span> • <span class="company"><a href="https://www.trentiums.com/" target="_blank" style="color:#4f46e5; text-decoration: none;">Trentium Solution (Trentiums)</a></span>
           </div>
           <span class="date-location">2025 | Ahmedabad, India</span>
         </div>
         <ul class="bullets">
-          <li>Built reusable, high-performance UI components in React and TypeScript for enterprise client web applications.</li>
-          <li>Optimized DOM rendering performance and virtual list efficiency, improving interactive responsiveness and load times.</li>
-          <li>Collaborated in agile development cycles with senior engineers via GitHub pull requests, peer reviews, and cross-browser testing.</li>
+          <li>Developed and styled responsive, reusable web components using <strong>React.js</strong>, <strong>TypeScript</strong>, and modern utility-first CSS frameworks for enterprise client applications.</li>
+          <li>Optimized DOM rendering hierarchies and virtualized list items, boosting client-side interaction speed and reducing initial bundle execution time.</li>
+          <li>Collaborated in agile development sprints with senior engineers via GitHub pull-request peer reviews, issue tracking, and cross-browser quality assurance.</li>
         </ul>
         <div class="tech-pill-list">
           <span class="tech-pill">React.js</span>
           <span class="tech-pill">TypeScript</span>
           <span class="tech-pill">JavaScript (ES6+)</span>
           <span class="tech-pill">Tailwind CSS</span>
+          <span class="tech-pill">Bootstrap 5</span>
           <span class="tech-pill">Git / GitHub</span>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
+    <!-- KEY PROJECTS -->
     <section class="section">
       <h3 class="section-title">Key Projects (Production & Open Source)</h3>
 
@@ -390,8 +390,8 @@
           <span class="date-location">React Native • Expo SDK 52 • TypeScript</span>
         </div>
         <ul class="bullets">
-          <li>Implemented GPS check-in with mock-location anti-spoofing guards using <code>expo-location</code> and file-based routing via <strong>Expo Router v4</strong>.</li>
-          <li>Automated night-shift overtime calculations (checkout &ge; 19:00) and generated monthly payroll PDF reports with <code>expo-print</code> and native sharing.</li>
+          <li>Built cross-platform attendance client using <strong>Expo Router v4</strong> with GPS radius verification and anti-spoofing Mock Location detection via <code>expo-location</code>.</li>
+          <li>Automated night shift overtime calculations for checkouts &ge; 19:00 and implemented in-app PDF payslip generation and native sharing via <code>expo-print</code> and <code>expo-sharing</code>.</li>
         </ul>
       </div>
 
@@ -399,15 +399,15 @@
       <div class="entry">
         <div class="entry-header">
           <div>
-            <span class="role-title">Land Survey Gujarat — Revenue & Land Records Search</span>
+            <span class="role-title">Land Survey Gujarat — Land Records & Revenue Search</span>
             <a href="https://land-survey-gujarat-enos.vercel.app" class="project-link" target="_blank">[Live Demo]</a>
             <a href="https://github.com/krishrawal734/land-survey-gujarat" class="project-link" target="_blank">[GitHub]</a>
           </div>
           <span class="date-location">React.js • TypeScript • Vite • Tailwind</span>
         </div>
         <ul class="bullets">
-          <li>Created a high-speed search platform for citizens to query land survey records, 7/12 & 8A village data, and revenue maps across 33 Gujarat districts.</li>
-          <li>Designed instant client-side search indexing with zero-lag filter queries and mobile-first responsive layout.</li>
+          <li>Architected high-speed query platform enabling citizens across 33 Gujarat districts to search land survey numbers, 7/12 & 8A village records, and revenue data.</li>
+          <li>Implemented instant client-side indexing with zero-lag search filtering and seamless mobile-responsive interface.</li>
         </ul>
       </div>
 
@@ -422,8 +422,37 @@
           <span class="date-location">React • WebSockets • JWT • Tailwind</span>
         </div>
         <ul class="bullets">
-          <li>Engineered bi-directional messaging with live presence status indicators, JWT session authorization, and optimistic UI message streaming.</li>
+          <li>Engineered bi-directional messaging client featuring real-time online/offline presence tracking, JWT authentication, and optimistic UI stream updates.</li>
         </ul>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="role-title">StudyAI — AI-Powered Mobile Learning Assistant</span>
+            <a href="https://github.com/krishrawal734/studyai" class="project-link" target="_blank">[GitHub]</a>
+          </div>
+          <span class="date-location">React Native • Expo • Generative AI</span>
+        </div>
+        <ul class="bullets">
+          <li>Created mobile learning tool with Generative AI APIs that generates dynamic flashcards, concept summaries, and spaced-repetition quizzes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS & OPEN SOURCE -->
+    <section class="section">
+      <h3 class="section-title">Open-Source Highlights & Technical Strengths</h3>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <span class="skill-label">63+ Public Repos:</span>
+          <span class="skill-val">Active creator building production-ready apps across mobile and modern web ecosystems.</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">Performance & Profiling:</span>
+          <span class="skill-val">Proficient in 60fps gesture rendering, React re-render optimization, and Hermes engine tuning.</span>
+        </div>
       </div>
     </section>
 
@@ -437,8 +466,8 @@
           </div>
           <span class="date-location">2024 - Present | Rajasthan, India</span>
         </div>
-        <div style="font-size: 9.5px; color: #475569; margin-top: 1px;">
-          Core Focus: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems (SQL), Web Architecture.
+        <div style="font-size: 10px; color: #475569; margin-top: 1px;">
+          Core Coursework: Data Structures & Algorithms, Object-Oriented Programming (OOP), Relational Database Management Systems (SQL), Modern Web Architecture.
         </div>
       </div>
     </section>
