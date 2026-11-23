@@ -43,7 +43,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
             <div>
               <h3 className="text-sm font-bold text-white">Krish Rawal — Verified Resume</h3>
-              <p className="text-[11px] text-slate-400 font-mono">ATS-Optimized • Frontend & React Native</p>
+              <p className="text-[11px] text-slate-400 font-mono">1-Page A4 • ATS-Optimized • Frontend & React Native</p>
             </div>
           </div>
 
