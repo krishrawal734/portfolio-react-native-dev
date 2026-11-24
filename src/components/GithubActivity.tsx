@@ -257,99 +257,99 @@ export const GithubActivity: React.FC = () => {
           </div>
 
           {/* Primary Profile Action */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 w-full sm:w-auto">
             <a
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-slate-800 hover:to-slate-700 border border-slate-700/80 text-xs font-semibold text-white shadow-lg transition-all hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-slate-800 hover:to-slate-700 border border-slate-700/80 text-xs font-semibold text-white shadow-lg transition-all hover:-translate-y-0.5 active:scale-98"
             >
-              <Github className="w-4 h-4 text-cyan-400" />
+              <Github className="w-4 h-4 text-cyan-400 shrink-0" />
               <span>Explore @krishrawal734 on GitHub</span>
-              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+              <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
             </a>
           </div>
         </div>
 
         {/* Enterprise KPI Metrics Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="glass-card rounded-2xl p-5 border border-slate-800/80 flex items-center justify-between group hover:border-brand-500/30 transition-all">
-            <div className="space-y-1">
-              <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Total Repositories</span>
-              <div className="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight">63+</div>
-              <span className="text-[11px] text-emerald-400 flex items-center gap-1 font-medium">
-                <TrendingUp className="w-3 h-3" /> All Open Source
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 mb-6 sm:mb-8">
+          <div className="glass-card rounded-2xl p-3.5 sm:p-5 border border-slate-800/80 flex items-center justify-between group hover:border-brand-500/30 transition-all">
+            <div className="space-y-1 min-w-0">
+              <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider block truncate">Total Repos</span>
+              <div className="text-xl xs:text-2xl sm:text-3xl font-black font-mono text-white tracking-tight">63+</div>
+              <span className="text-[10px] sm:text-[11px] text-emerald-400 flex items-center gap-1 font-medium truncate">
+                <TrendingUp className="w-3 h-3 shrink-0" /> Open Source
               </span>
             </div>
-            <div className="p-3 rounded-xl bg-brand-600/10 border border-brand-500/20 text-brand-400 group-hover:scale-105 transition-transform">
-              <FolderGit2 className="w-6 h-6" />
+            <div className="p-2 sm:p-3 rounded-xl bg-brand-600/10 border border-brand-500/20 text-brand-400 group-hover:scale-105 transition-transform shrink-0">
+              <FolderGit2 className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
           </div>
 
-          <div className="glass-card rounded-2xl p-5 border border-slate-800/80 flex items-center justify-between group hover:border-brand-500/30 transition-all">
-            <div className="space-y-1">
-              <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Annual Commits</span>
-              <div className="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight">840+</div>
-              <span className="text-[11px] text-cyan-400 flex items-center gap-1 font-medium">
-                <GitCommit className="w-3 h-3" /> Daily Active Velocity
+          <div className="glass-card rounded-2xl p-3.5 sm:p-5 border border-slate-800/80 flex items-center justify-between group hover:border-brand-500/30 transition-all">
+            <div className="space-y-1 min-w-0">
+              <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider block truncate">Annual Commits</span>
+              <div className="text-xl xs:text-2xl sm:text-3xl font-black font-mono text-white tracking-tight">840+</div>
+              <span className="text-[10px] sm:text-[11px] text-cyan-400 flex items-center gap-1 font-medium truncate">
+                <GitCommit className="w-3 h-3 shrink-0" /> Active Velocity
               </span>
             </div>
-            <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 group-hover:scale-105 transition-transform">
-              <Flame className="w-6 h-6" />
+            <div className="p-2 sm:p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 group-hover:scale-105 transition-transform shrink-0">
+              <Flame className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
           </div>
 
-          <div className="glass-card rounded-2xl p-5 border border-slate-800/80 flex items-center justify-between group hover:border-brand-500/30 transition-all">
-            <div className="space-y-1">
-              <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Longest Streak</span>
-              <div className="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight">48 Days</div>
-              <span className="text-[11px] text-amber-400 flex items-center gap-1 font-medium">
-                <Flame className="w-3 h-3 fill-current" /> Consistent Rhythm
+          <div className="glass-card rounded-2xl p-3.5 sm:p-5 border border-slate-800/80 flex items-center justify-between group hover:border-brand-500/30 transition-all">
+            <div className="space-y-1 min-w-0">
+              <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider block truncate">Longest Streak</span>
+              <div className="text-xl xs:text-2xl sm:text-3xl font-black font-mono text-white tracking-tight">48 Days</div>
+              <span className="text-[10px] sm:text-[11px] text-amber-400 flex items-center gap-1 font-medium truncate">
+                <Flame className="w-3 h-3 fill-current shrink-0" /> Consistent
               </span>
             </div>
-            <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 group-hover:scale-105 transition-transform">
-              <Calendar className="w-6 h-6" />
+            <div className="p-2 sm:p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 group-hover:scale-105 transition-transform shrink-0">
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
           </div>
 
-          <div className="glass-card rounded-2xl p-5 border border-slate-800/80 flex items-center justify-between group hover:border-brand-500/30 transition-all">
-            <div className="space-y-1">
-              <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Core Languages</span>
-              <div className="text-2xl sm:text-3xl font-black font-mono text-white tracking-tight">TS / React</div>
-              <span className="text-[11px] text-purple-400 flex items-center gap-1 font-medium">
-                <GitBranch className="w-3 h-3" /> Expo SDK 52 Native
+          <div className="glass-card rounded-2xl p-3.5 sm:p-5 border border-slate-800/80 flex items-center justify-between group hover:border-brand-500/30 transition-all">
+            <div className="space-y-1 min-w-0">
+              <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase tracking-wider block truncate">Core Stack</span>
+              <div className="text-xl xs:text-2xl sm:text-3xl font-black font-mono text-white tracking-tight">TS / React</div>
+              <span className="text-[10px] sm:text-[11px] text-purple-400 flex items-center gap-1 font-medium truncate">
+                <GitBranch className="w-3 h-3 shrink-0" /> Expo SDK 52
               </span>
             </div>
-            <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover:scale-105 transition-transform">
-              <Code2 className="w-6 h-6" />
+            <div className="p-2 sm:p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover:scale-105 transition-transform shrink-0">
+              <Code2 className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
           </div>
         </div>
 
         {/* Interactive Contribution Engine & Commit Log Panel */}
-        <div className="glass-card rounded-3xl p-6 sm:p-8 mb-12 border border-slate-800/80">
+        <div className="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-8 mb-10 sm:mb-12 border border-slate-800/80">
           
           {/* Panel Header with View Switcher */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-slate-800">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-brand-600/20 border border-brand-500/30 flex items-center justify-center text-brand-400">
+              <div className="w-8 h-8 rounded-lg bg-brand-600/20 border border-brand-500/30 flex items-center justify-center text-brand-400 shrink-0">
                 <GitCommit className="w-4 h-4" />
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-white">
+                <h3 className="text-sm sm:text-lg font-bold text-white">
                   {activeView === 'heatmap' ? '52-Week Live Contribution Heatmap' : 'Verified Commit History Stream'}
                 </h3>
-                <p className="text-xs text-slate-400 font-mono">
+                <p className="text-[11px] sm:text-xs text-slate-400 font-mono">
                   Synced with GitHub API & Git Prebuild Workflows
                 </p>
               </div>
             </div>
 
             {/* View Toggle Tabs */}
-            <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-900 border border-slate-800 self-start sm:self-auto">
+            <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-900 border border-slate-800 w-full sm:w-auto">
               <button
                 onClick={() => setActiveView('heatmap')}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                className={`flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-all ${
                   activeView === 'heatmap'
                     ? 'bg-brand-600 text-white shadow'
                     : 'text-slate-400 hover:text-white hover:bg-slate-800'
@@ -360,7 +360,7 @@ export const GithubActivity: React.FC = () => {
               </button>
               <button
                 onClick={() => setActiveView('commits')}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                className={`flex-1 sm:flex-initial px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-all ${
                   activeView === 'commits'
                     ? 'bg-brand-600 text-white shadow'
                     : 'text-slate-400 hover:text-white hover:bg-slate-800'
@@ -374,11 +374,16 @@ export const GithubActivity: React.FC = () => {
 
           {/* VIEW 1: NATIVE HIGH-PRECISION HEATMAP */}
           {activeView === 'heatmap' && (
-            <div className="pt-6 space-y-4">
+            <div className="pt-4 sm:pt-6 space-y-3 sm:space-y-4">
               
+              {/* Mobile swipe helper */}
+              <div className="sm:hidden flex items-center justify-center gap-1 text-[10px] text-cyan-400 font-mono pb-1">
+                <span>← Swipe horizontally to explore 52-week matrix →</span>
+              </div>
+
               {/* Month Markers */}
-              <div className="overflow-x-auto pb-2 scrollbar-none">
-                <div className="min-w-[760px]">
+              <div className="overflow-x-auto pb-2 scrollbar-thin -mx-1 px-1 sm:mx-0 sm:px-0">
+                <div className="min-w-[720px] sm:min-w-[760px]">
                   <div className="flex justify-between text-[10px] font-mono text-slate-500 px-6 mb-2">
                     {months.map((m) => (
                       <span key={m}>{m}</span>
@@ -500,12 +505,12 @@ export const GithubActivity: React.FC = () => {
             </div>
 
             {/* Filter Pills */}
-            <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-slate-900 border border-slate-800 self-start sm:self-auto">
+            <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-slate-900 border border-slate-800 w-full sm:w-auto">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
+                  className={`px-3 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-medium transition-all ${
                     activeCategory === cat
                       ? 'bg-brand-600 text-white shadow-md shadow-brand-500/20'
                       : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
@@ -517,11 +522,11 @@ export const GithubActivity: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {filteredRepos.map((repo) => (
               <div
                 key={repo.name}
-                className="glass-card rounded-3xl p-6 flex flex-col justify-between hover:-translate-y-1 hover:border-brand-500/40 transition-all group"
+                className="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between hover:-translate-y-1 hover:border-brand-500/40 transition-all group"
               >
                 <div>
                   {/* Top Bar: Name & Branch */}

@@ -44,22 +44,22 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onContact
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-cyan-400 p-0.5 shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <a href="#" className="flex items-center gap-2 group min-w-0">
+            <div className="relative flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-cyan-400 p-0.5 shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform shrink-0">
               <div className={`w-full h-full rounded-[10px] flex items-center justify-center ${darkMode ? 'bg-slate-950' : 'bg-white'}`}>
-                <Smartphone className="w-5 h-5 text-brand-500 group-hover:text-cyan-400 transition-colors" />
+                <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 text-brand-500 group-hover:text-cyan-400 transition-colors" />
               </div>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col min-w-0">
               <div className="flex items-center gap-1.5">
-                <span className="font-bold text-base sm:text-lg tracking-tight">
+                <span className="font-bold text-sm sm:text-lg tracking-tight truncate max-w-[130px] xs:max-w-none">
                   {portfolioData.personal.name}
                 </span>
-                <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                <span className="hidden xs:inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20 shrink-0">
                   <Zap className="w-2.5 h-2.5 fill-current" /> Expo
                 </span>
               </div>
-              <span className={`text-[11px] font-mono tracking-tight ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
+              <span className={`text-[10px] sm:text-[11px] font-mono tracking-tight truncate ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                 React Native Engineer
               </span>
             </div>
@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onContact
           </nav>
 
           {/* Right Action buttons */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Dark/Light mode toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
@@ -113,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onContact
             {/* Let's Talk CTA */}
             <button
               onClick={onContactClick}
-              className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 shadow-md shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 shadow-md shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all"
             >
               <Send className="w-3.5 h-3.5" />
               <span>Hire Me</span>
@@ -135,10 +135,10 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onContact
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
           <div
-            className={`md:hidden py-4 px-2 space-y-1 border-t rounded-b-2xl transition-all ${
+            className={`md:hidden py-4 px-3 space-y-1.5 border-t rounded-b-2xl shadow-xl transition-all ${
               darkMode
-                ? 'bg-slate-950/95 border-slate-800 text-slate-200'
-                : 'bg-white/95 border-slate-200 text-slate-800'
+                ? 'bg-slate-950/98 border-slate-800/90 text-slate-200 shadow-black/50'
+                : 'bg-white/98 border-slate-200/90 text-slate-800 shadow-slate-200/50'
             }`}
           >
             {navLinks.map((link) => (
@@ -146,23 +146,25 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onContact
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-3 py-2.5 rounded-lg text-sm font-medium ${
-                  darkMode ? 'hover:bg-slate-900' : 'hover:bg-slate-100'
+                className={`block px-3.5 py-3 rounded-xl text-sm font-medium transition-colors ${
+                  darkMode ? 'hover:bg-slate-900 active:bg-slate-850' : 'hover:bg-slate-100 active:bg-slate-200'
                 }`}
               >
                 {link.label}
               </a>
             ))}
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onResumeClick();
-              }}
-              className="w-full mt-2 px-3 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 text-brand-400 bg-brand-500/10 border border-brand-500/20"
-            >
-              <FileText className="w-4 h-4" />
-              <span>View & Print Resume</span>
-            </button>
+            <div className="pt-2 border-t border-slate-800/50 flex flex-col gap-2">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onResumeClick();
+                }}
+                className="w-full py-3 px-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 text-brand-400 bg-brand-500/10 border border-brand-500/20 active:scale-98 transition-all"
+              >
+                <FileText className="w-4 h-4" />
+                <span>View & Print Resume</span>
+              </button>
+            </div>
           </div>
         )}
       </div>

@@ -60,20 +60,20 @@ export const ExpoShowcase: React.FC = () => {
         </div>
 
         {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {features.map((feat, idx) => (
             <div
               key={idx}
-              className="glass-card rounded-3xl p-6 flex flex-col justify-between hover:-translate-y-1 transition-all group"
+              className="glass-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between hover:-translate-y-1 transition-all group"
             >
               <div>
-                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${feat.color} p-0.5 mb-5 flex items-center justify-center text-white shadow-lg`}>
-                  <feat.icon className="w-6 h-6" />
+                <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr ${feat.color} p-0.5 mb-4 sm:mb-5 flex items-center justify-center text-white shadow-lg`}>
+                  <feat.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-slate-900 text-brand-300 border border-slate-800">
                   {feat.badge}
                 </span>
-                <h3 className="text-lg font-bold text-white mt-2 mb-2 group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-base sm:text-lg font-bold text-white mt-2 mb-2 group-hover:text-cyan-400 transition-colors">
                   {feat.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
@@ -81,8 +81,8 @@ export const ExpoShowcase: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
-                <CheckCircle2 className="w-4 h-4 shrink-0" />
+              <div className="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-800/80 flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                 <span>Production Tested</span>
               </div>
             </div>
@@ -90,18 +90,18 @@ export const ExpoShowcase: React.FC = () => {
         </div>
 
         {/* eas.json terminal preview */}
-        <div className="mt-12 rounded-3xl bg-slate-950 border border-slate-800 p-6 overflow-hidden font-mono text-xs shadow-2xl">
-          <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+        <div className="mt-10 sm:mt-12 rounded-2xl sm:rounded-3xl bg-slate-950 border border-slate-800 p-4 sm:p-6 overflow-hidden font-mono text-xs shadow-2xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 sm:pb-4 mb-3 sm:mb-4 border-b border-slate-800 gap-2">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-              <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-              <span className="text-slate-400 ml-2 font-mono text-[11px]">eas.json — Production EAS Pipeline</span>
+              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80"></div>
+              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80"></div>
+              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500/80"></div>
+              <span className="text-slate-400 ml-1.5 font-mono text-[10px] sm:text-[11px] truncate">eas.json — Production EAS Pipeline</span>
             </div>
-            <span className="text-slate-500 text-[11px]">React Native 0.76+ New Arch</span>
+            <span className="text-slate-500 text-[10px] sm:text-[11px] self-start sm:self-auto">React Native 0.76+ New Arch</span>
           </div>
 
-          <pre className="text-slate-300 overflow-x-auto leading-relaxed">
+          <pre className="text-slate-300 overflow-x-auto text-[11px] sm:text-xs leading-relaxed p-1 scrollbar-thin">
 {`{
   "cli": { "version": ">= 12.0.0" },
   "build": {

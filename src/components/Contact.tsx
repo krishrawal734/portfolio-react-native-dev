@@ -75,52 +75,52 @@ export const Contact: React.FC = () => {
           
           {/* Left: Quick info & Socials */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="glass-card rounded-3xl p-6 sm:p-7 space-y-5">
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+            <div className="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 space-y-4 sm:space-y-5">
+              <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-cyan-400" /> Direct Contact Info
               </h3>
               
-              <div className="space-y-3.5 text-sm">
+              <div className="space-y-3 text-sm">
                 {/* Direct WhatsApp Card */}
                 <a
                   href={`https://wa.me/${personal.whatsapp}?text=${encodeURIComponent(personal.whatsappMessage)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3.5 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 hover:border-emerald-400 hover:bg-emerald-950/60 transition-all group shadow-md shadow-emerald-950/20"
+                  className="flex items-center justify-between p-3 sm:p-3.5 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 hover:border-emerald-400 hover:bg-emerald-950/60 transition-all group shadow-md shadow-emerald-950/20 active:scale-98"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 group-hover:scale-110 transition-transform">
-                      <WhatsAppIcon className="w-5 h-5 text-emerald-400" />
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 group-hover:scale-110 transition-transform shrink-0">
+                      <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="flex items-center gap-1.5">
                         <span className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors">Chat on WhatsApp</span>
-                        <span className="text-[9px] font-mono px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/30">
+                        <span className="text-[9px] font-mono px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/30 shrink-0">
                           Fast Reply
                         </span>
                       </div>
-                      <span className="text-[11px] text-emerald-300/80 font-mono block mt-0.5">{personal.phoneDisplay} • Instant Response</span>
+                      <span className="text-[10px] sm:text-[11px] text-emerald-300/80 font-mono block mt-0.5 truncate">{personal.phoneDisplay} • Instant Response</span>
                     </div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-emerald-400 group-hover:translate-x-0.5 transition-transform shrink-0" />
+                  <ExternalLink className="w-4 h-4 text-emerald-400 group-hover:translate-x-0.5 transition-transform shrink-0 ml-2" />
                 </a>
 
                 {/* Direct Email Card */}
                 <a
                   href={`mailto:${personal.email}`}
-                  className="flex items-center gap-3 p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-brand-500/50 transition-all group"
+                  className="flex items-center gap-3 p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-brand-500/50 transition-all group min-w-0"
                 >
-                  <div className="p-2 rounded-xl bg-slate-950 text-cyan-400 group-hover:scale-105 transition-transform">
+                  <div className="p-2 rounded-xl bg-slate-950 text-cyan-400 group-hover:scale-105 transition-transform shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <div>
-                    <span className="text-[11px] text-slate-400 block">Email Me</span>
-                    <span className="font-medium">{personal.email}</span>
+                  <div className="min-w-0">
+                    <span className="text-[10px] sm:text-[11px] text-slate-400 block">Email Me</span>
+                    <span className="font-medium text-xs sm:text-sm break-all">{personal.email}</span>
                   </div>
                 </a>
 
                 <div className="p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-300">
-                  <span className="text-[11px] text-slate-400 block">Current Status</span>
+                  <span className="text-[10px] sm:text-[11px] text-slate-400 block">Current Status</span>
                   <div className="flex items-center gap-2 mt-0.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                     <span className="font-medium text-emerald-400 text-xs">{personal.availability}</span>
@@ -128,7 +128,7 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-300">
-                  <span className="text-[11px] text-slate-400 block">Location & Timezone</span>
+                  <span className="text-[10px] sm:text-[11px] text-slate-400 block">Location & Timezone</span>
                   <span className="font-medium text-xs text-white">{personal.location}</span>
                 </div>
               </div>
@@ -171,14 +171,14 @@ export const Contact: React.FC = () => {
 
           {/* Right: Interactive Message Form */}
           <div className="lg:col-span-7">
-            <div className="glass-card rounded-3xl p-6 sm:p-8">
+            <div className="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-8">
               {submitted ? (
-                <div className="text-center py-12 space-y-4 animate-fadeIn">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
+                <div className="text-center py-10 sm:py-12 space-y-4 animate-fadeIn">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Message Dispatched!</h3>
-                  <p className="text-sm text-slate-300 max-w-sm mx-auto leading-relaxed">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">Message Dispatched!</h3>
+                  <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto leading-relaxed">
                     Thanks for reaching out! I typically reply within 24 hours. Looking forward to talking mobile apps!
                   </p>
                   <button
@@ -202,7 +202,7 @@ export const Contact: React.FC = () => {
                         placeholder="Sarah Connor"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-500 text-sm text-white placeholder-slate-500 focus:outline-none transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-500 text-base sm:text-sm text-white placeholder-slate-500 focus:outline-none transition-all"
                       />
                     </div>
 
@@ -214,7 +214,7 @@ export const Contact: React.FC = () => {
                         placeholder="sarah@example.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-500 text-sm text-white placeholder-slate-500 focus:outline-none transition-all"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-500 text-base sm:text-sm text-white placeholder-slate-500 focus:outline-none transition-all"
                       />
                     </div>
                   </div>
@@ -224,7 +224,7 @@ export const Contact: React.FC = () => {
                     <select
                       value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-500 text-sm text-white focus:outline-none transition-all"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-500 text-base sm:text-sm text-white focus:outline-none transition-all"
                     >
                       <option>New Mobile App (Greenfield)</option>
                       <option>React Native Upgrade & New Architecture Migration</option>
@@ -242,14 +242,14 @@ export const Contact: React.FC = () => {
                       placeholder="Tell me about your mobile vision, existing codebase, timeline, or key challenges..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-500 text-sm text-white placeholder-slate-500 focus:outline-none transition-all resize-none"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 focus:border-brand-500 text-base sm:text-sm text-white placeholder-slate-500 focus:outline-none transition-all resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-500 hover:from-brand-500 hover:to-cyan-400 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all disabled:opacity-50"
+                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-500 hover:from-brand-500 hover:to-cyan-400 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 active:scale-98 transition-all disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <>

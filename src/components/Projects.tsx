@@ -40,12 +40,12 @@ export const Projects: React.FC = () => {
           </div>
 
           {/* Filter Pills */}
-          <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-slate-900 border border-slate-800">
+          <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-slate-900 border border-slate-800 w-full sm:w-auto">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all ${
+                className={`px-3 sm:px-3.5 py-1.5 rounded-xl text-[11px] sm:text-xs font-medium transition-all ${
                   selectedCategory === cat
                     ? 'bg-brand-600 text-white shadow-md shadow-brand-500/20'
                     : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
@@ -58,11 +58,11 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group"
+              className="glass-card rounded-3xl p-5 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group"
             >
               <div>
                 {/* Card Top: Badges and Title */}
@@ -98,16 +98,16 @@ export const Projects: React.FC = () => {
                 <p className="text-slate-300 text-sm font-medium mb-3">
                   {project.tagline}
                 </p>
-                <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
                   {project.description}
                 </p>
 
                 {/* Key Metrics Strip */}
-                <div className="grid grid-cols-3 gap-2 p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80 mb-6">
+                <div className="grid grid-cols-3 gap-1.5 sm:gap-2 p-2.5 sm:p-3 rounded-2xl bg-slate-950/60 border border-slate-800/80 mb-5 sm:mb-6">
                   {project.stats.map((st, i) => (
-                    <div key={i} className="text-center">
-                      <span className="text-[10px] text-slate-400 block">{st.label}</span>
-                      <span className="text-xs sm:text-sm font-bold font-mono text-cyan-400">{st.value}</span>
+                    <div key={i} className="text-center min-w-0">
+                      <span className="text-[9px] sm:text-[10px] text-slate-400 block truncate">{st.label}</span>
+                      <span className="text-[11px] sm:text-sm font-bold font-mono text-cyan-400 break-words">{st.value}</span>
                     </div>
                   ))}
                 </div>
@@ -126,10 +126,10 @@ export const Projects: React.FC = () => {
               </div>
 
               {/* Card Footer Actions */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-800/80">
+              <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 pt-4 border-t border-slate-800/80">
                 <button
                   onClick={() => setActiveModalProject(project)}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-400 hover:text-brand-300 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-400 hover:text-brand-300 transition-colors py-1"
                 >
                   <span>Architecture & Features</span>
                   <ArrowRight className="w-3.5 h-3.5" />

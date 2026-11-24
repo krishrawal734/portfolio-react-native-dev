@@ -46,7 +46,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'} font-sans selection:bg-brand-500 selection:text-white transition-colors duration-300`}>
+    <div className={`min-h-screen w-full overflow-x-hidden ${darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'} font-sans selection:bg-brand-500 selection:text-white transition-colors duration-300`}>
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}
@@ -54,7 +54,7 @@ export const App: React.FC = () => {
         onResumeClick={() => setResumeModalOpen(true)}
       />
 
-      <main>
+      <main className="w-full overflow-x-hidden">
         <Hero onContactClick={handleContactClick} />
         <Projects />
         <Skills />
@@ -77,7 +77,7 @@ export const App: React.FC = () => {
         href={`https://wa.me/${portfolioData.personal.whatsapp}?text=${encodeURIComponent(portfolioData.personal.whatsappMessage)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-xl shadow-emerald-500/30 hover:scale-110 active:scale-95 transition-all flex items-center justify-center group"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 p-3 sm:p-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-xl shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all flex items-center justify-center group"
         aria-label="Chat on WhatsApp"
         title="Direct WhatsApp Chat with Krish"
       >

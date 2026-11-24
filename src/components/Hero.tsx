@@ -111,18 +111,18 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                 <span>Crafting 60fps Native Mobile Experiences</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.14] break-words">
                 Hi, I'm <span className="animated-gradient-text">{personal.name}</span>
-                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-mono text-slate-200 mt-2.5 flex items-center justify-center lg:justify-start min-h-[44px]">
+                <span className="block text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-mono text-slate-200 mt-2.5 flex items-center justify-center lg:justify-start min-h-[52px] sm:min-h-[44px]">
                   <span className="text-cyan-400 mr-2 text-base sm:text-xl font-normal">&gt;</span>
-                  <span className="bg-gradient-to-r from-cyan-400 via-brand-300 to-indigo-300 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-cyan-400 via-brand-300 to-indigo-300 bg-clip-text text-transparent break-words">
                     {displayText}
                   </span>
-                  <span className="terminal-cursor inline-block w-2.5 h-6 sm:h-8 bg-cyan-400 ml-1.5 rounded-sm"></span>
+                  <span className="terminal-cursor inline-block w-2.5 h-5 sm:h-7 bg-cyan-400 ml-1.5 rounded-sm shrink-0"></span>
                 </span>
               </h1>
               
-              <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
                 Building fast, responsive web applications with <strong className="text-white font-semibold">React & TypeScript</strong>, and high-performance cross-platform mobile apps for iOS and Android with <strong className="text-cyan-400 font-semibold">React Native</strong> & <strong className="text-brand-400 font-semibold">Expo SDK 52</strong>.
               </p>
             </div>
@@ -144,10 +144,10 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
               <a
                 href="#projects"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-brand-600 via-indigo-600 to-brand-700 hover:from-brand-500 hover:to-indigo-500 shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-brand-600 via-indigo-600 to-brand-700 hover:from-brand-500 hover:to-indigo-500 shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 active:scale-98 transition-all"
               >
                 <span>View Featured Projects</span>
                 <ArrowRight className="w-4 h-4" />
@@ -155,13 +155,13 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
 
               <button
                 onClick={onContactClick}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 transition-all hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 transition-all hover:-translate-y-0.5 active:scale-98"
               >
                 <Sparkles className="w-4 h-4 text-brand-400" />
                 <span>Get In Touch</span>
               </button>
 
-              <div className="flex items-center gap-2 pt-2 sm:pt-0">
+              <div className="flex items-center justify-center gap-2 pt-1 sm:pt-0">
                 <a
                   href={`https://wa.me/${personal.whatsapp}?text=${encodeURIComponent(personal.whatsappMessage)}`}
                   target="_blank"
@@ -196,13 +196,13 @@ export const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             </div>
 
             {/* Metrics Grid Banner */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-800/80">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-6 border-t border-slate-800/80">
               {personal.stats.map((stat, idx) => (
-                <div key={idx} className="p-3 rounded-xl bg-slate-900/50 border border-slate-800/60 text-center lg:text-left">
-                  <div className="text-xl sm:text-2xl font-black text-white font-mono tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text">
+                <div key={idx} className="p-2.5 sm:p-3 rounded-xl bg-slate-900/50 border border-slate-800/60 text-center lg:text-left">
+                  <div className="text-lg xs:text-xl sm:text-2xl font-black text-white font-mono tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text">
                     {stat.value}
                   </div>
-                  <div className="text-[11px] text-slate-400 font-medium mt-0.5">
+                  <div className="text-[10px] sm:text-[11px] text-slate-400 font-medium mt-0.5 truncate">
                     {stat.label}
                   </div>
                 </div>

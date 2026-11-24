@@ -46,7 +46,7 @@ export const Experience: React.FC = () => {
 
                   {/* Content Card */}
                   <div className="w-full sm:w-[calc(50%-2rem)]">
-                    <div className="glass-card rounded-3xl p-6 sm:p-7 hover:-translate-y-1 transition-all">
+                    <div className="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 hover:-translate-y-1 transition-all">
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                         <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-brand-500/10 text-brand-300 border border-brand-500/20">
                           {exp.type}
@@ -57,10 +57,10 @@ export const Experience: React.FC = () => {
                         </div>
                       </div>
 
-                      <h3 className="text-lg sm:text-xl font-bold text-white mb-0.5">
+                      <h3 className="text-base sm:text-xl font-bold text-white mb-0.5">
                         {exp.role}
                       </h3>
-                      <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-brand-400 mb-4">
+                      <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-brand-400 mb-3 sm:mb-4">
                         {exp.companyUrl ? (
                           <a
                             href={exp.companyUrl}

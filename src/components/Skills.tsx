@@ -73,15 +73,15 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {skillsCategories.map((category, catIdx) => (
             <div
               key={catIdx}
-              className="glass-card rounded-3xl p-6 sm:p-8 space-y-6 flex flex-col justify-between"
+              className="glass-card rounded-3xl p-5 sm:p-8 space-y-5 sm:space-y-6 flex flex-col justify-between"
             >
               <div>
-                <div className="space-y-1 mb-5">
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                <div className="space-y-1 mb-4 sm:mb-5">
+                  <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
                     {category.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-400">
@@ -90,21 +90,21 @@ export const Skills: React.FC = () => {
                 </div>
 
                 {/* Skills list */}
-                <div className="space-y-3">
+                <div className="space-y-2.5 sm:space-y-3">
                   {category.skills.map((skill, sIdx) => (
                     <div
                       key={sIdx}
-                      className="p-3 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-slate-700 transition-all flex items-start gap-3.5 group"
+                      className="p-2.5 sm:p-3 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-slate-700 transition-all flex items-start gap-3 group"
                     >
                       <div className="p-2 rounded-xl bg-slate-950 border border-slate-800 shrink-0 group-hover:scale-105 transition-transform">
                         {getIcon(skill.iconName)}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-0.5">
-                          <span className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                        <div className="flex items-center justify-between gap-2 mb-0.5">
+                          <span className="text-xs sm:text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors truncate">
                             {skill.name}
                           </span>
-                          <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-medium ${
+                          <span className={`text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-full font-medium shrink-0 ${
                             skill.level === 'Expert'
                               ? 'bg-brand-500/15 text-brand-300 border border-brand-500/30'
                               : 'bg-slate-800 text-slate-300 border border-slate-700'
@@ -112,7 +112,7 @@ export const Skills: React.FC = () => {
                             {skill.level}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-400 leading-snug">
+                        <p className="text-[11px] sm:text-xs text-slate-400 leading-snug">
                           {skill.description}
                         </p>
                       </div>
@@ -125,23 +125,23 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Deep Dive Callout Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-brand-950/60 via-slate-900 to-indigo-950/60 border border-brand-800/40">
+        <div className="mt-10 sm:mt-12 p-5 sm:p-8 rounded-3xl bg-gradient-to-r from-brand-950/60 via-slate-900 to-indigo-950/60 border border-brand-800/40">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-8 space-y-2">
               <span className="text-xs font-bold text-brand-400 uppercase tracking-wider flex items-center gap-1.5">
                 <Zap className="w-3.5 h-3.5 fill-current" /> Architecture Philosophy
               </span>
-              <h4 className="text-xl font-bold text-white">
+              <h4 className="text-lg sm:text-xl font-bold text-white">
                 Why React Native Fabric & Expo in 2026?
               </h4>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                 By leveraging React Native's Fabric rendering engine and TurboModules with synchronous C++ JSI bindings, we eliminate the asynchronous JSON bridge bottleneck. Combined with Expo Prebuild config plugins and EAS continuous cloud pipelines, teams get 100% native power with 10x faster iteration speeds.
               </p>
             </div>
-            <div className="lg:col-span-4 flex justify-start lg:justify-end">
+            <div className="lg:col-span-4 flex justify-stretch sm:justify-start lg:justify-end">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-slate-950 font-bold text-xs hover:bg-slate-100 transition-all shadow-lg shadow-white/10"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white text-slate-950 font-bold text-xs hover:bg-slate-100 transition-all shadow-lg shadow-white/10"
               >
                 <span>Hire an Expo Specialist</span>
               </a>

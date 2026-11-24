@@ -67,37 +67,37 @@ export const PhoneSimulator: React.FC = () => {
   };
 
   return (
-    <div className="relative mx-auto flex flex-col items-center">
+    <div className="relative w-full max-w-[340px] mx-auto flex flex-col items-center px-1 sm:px-0">
       {/* Device wrapper with phone frame */}
-      <div className="relative w-[310px] sm:w-[340px] h-[640px] sm:h-[670px] bg-slate-900 rounded-[50px] p-3 shadow-2xl shadow-brand-500/10 border-4 border-slate-700/80 ring-1 ring-slate-800">
+      <div className="relative w-full max-w-[290px] xs:max-w-[315px] sm:max-w-[340px] h-[590px] xs:h-[630px] sm:h-[670px] bg-slate-900 rounded-[44px] sm:rounded-[50px] p-2.5 sm:p-3 shadow-2xl shadow-brand-500/10 border-4 border-slate-700/80 ring-1 ring-slate-800">
         
-        {/* Physical buttons on the sides */}
-        <div className="absolute -left-4 top-24 w-1 h-8 bg-slate-700 rounded-l-md"></div>
-        <div className="absolute -left-4 top-36 w-1 h-12 bg-slate-700 rounded-l-md"></div>
-        <div className="absolute -left-4 top-52 w-1 h-12 bg-slate-700 rounded-l-md"></div>
-        <div className="absolute -right-4 top-32 w-1 h-14 bg-slate-700 rounded-r-md"></div>
+        {/* Physical buttons on the sides - positioned safely on desktop */}
+        <div className="hidden sm:block absolute -left-3.5 top-24 w-1 h-8 bg-slate-700 rounded-l-md"></div>
+        <div className="hidden sm:block absolute -left-3.5 top-36 w-1 h-12 bg-slate-700 rounded-l-md"></div>
+        <div className="hidden sm:block absolute -left-3.5 top-52 w-1 h-12 bg-slate-700 rounded-l-md"></div>
+        <div className="hidden sm:block absolute -right-3.5 top-32 w-1 h-14 bg-slate-700 rounded-r-md"></div>
 
         {/* Screen Bezel */}
-        <div className="relative w-full h-full bg-slate-950 rounded-[38px] overflow-hidden flex flex-col border border-slate-800 shadow-inner select-none font-sans">
+        <div className="relative w-full h-full bg-slate-950 rounded-[34px] sm:rounded-[38px] overflow-hidden flex flex-col border border-slate-800 shadow-inner select-none font-sans">
           
           {/* Dynamic Island / Notch */}
-          <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-6 bg-black rounded-full z-40 flex items-center justify-between px-2.5 shadow-md">
-            <div className="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800"></div>
-            <div className="w-2 h-2 rounded-full bg-emerald-500/80 animate-pulse"></div>
+          <div className="absolute top-2 sm:top-2.5 left-1/2 -translate-x-1/2 w-24 sm:w-28 h-5 sm:h-6 bg-black rounded-full z-40 flex items-center justify-between px-2 sm:px-2.5 shadow-md">
+            <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-slate-900 border border-slate-800"></div>
+            <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-emerald-500/80 animate-pulse"></div>
           </div>
 
           {/* iOS Status Bar */}
-          <div className="h-10 pt-2 px-6 flex items-center justify-between text-[11px] font-semibold text-slate-300 z-30">
+          <div className="h-9 sm:h-10 pt-1.5 sm:pt-2 px-4 sm:px-6 flex items-center justify-between text-[10px] sm:text-[11px] font-semibold text-slate-300 z-30">
             <span>07:24 PM</span>
             <div className="flex items-center gap-1.5">
-              <Wifi className="w-3.5 h-3.5" />
-              <span className="text-[10px] font-mono">5G</span>
-              <Battery className="w-4 h-4 fill-slate-300" />
+              <Wifi className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
+              <span className="text-[9px] sm:text-[10px] font-mono">5G</span>
+              <Battery className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-slate-300" />
             </div>
           </div>
 
           {/* Screen Content Area */}
-          <div className="flex-1 overflow-y-auto px-4 pt-1 pb-16 text-slate-100 scrollbar-none">
+          <div className="flex-1 overflow-y-auto px-3 sm:px-4 pt-1 pb-16 text-slate-100 scrollbar-none">
             
             {/* TAB 1: WORKPULSE GPS ATTENDANCE & PAYROLL APP */}
             {activeTab === 'attendance' && (
@@ -135,18 +135,18 @@ export const PhoneSimulator: React.FC = () => {
                 </div>
 
                 {/* GPS Location & Anti-Mock check */}
-                <div className="p-2.5 rounded-2xl bg-slate-900 border border-slate-800 text-[11px] space-y-1">
+                <div className="p-2.5 rounded-2xl bg-slate-900 border border-slate-800 text-[10px] sm:text-[11px] space-y-1">
                   <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-1 text-slate-400">
+                    <span className="flex items-center gap-1 text-slate-400 min-w-0">
                       <MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                       <span className="truncate">Ahmedabad, Gujarat (23.03° N, 72.50° E)</span>
                     </span>
                   </div>
-                  <div className="flex items-center justify-between pt-1 border-t border-slate-800/80 text-[10px]">
-                    <span className="text-slate-400 flex items-center gap-1">
-                      <ShieldCheck className="w-3 h-3 text-emerald-400" /> Anti-Mock Location:
+                  <div className="flex items-center justify-between pt-1 border-t border-slate-800/80 text-[9px] sm:text-[10px]">
+                    <span className="text-slate-400 flex items-center gap-1 shrink-0">
+                      <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" /> Anti-Mock GPS:
                     </span>
-                    <span className="font-mono text-emerald-400 font-semibold">CLEAN (No Fake GPS)</span>
+                    <span className="font-mono text-emerald-400 font-semibold truncate">CLEAN (No Fake GPS)</span>
                   </div>
                 </div>
 
@@ -378,9 +378,9 @@ export const PhoneSimulator: React.FC = () => {
       </div>
 
       {/* Interactive Helper Caption */}
-      <div className="mt-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs text-slate-300 shadow-md">
-        <Smartphone className="w-3.5 h-3.5 text-brand-400" />
-        <span>Click tabs inside phone to test WorkPulse & Land Survey!</span>
+      <div className="mt-4 flex items-center justify-center text-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-[11px] sm:text-xs text-slate-300 shadow-md max-w-full">
+        <Smartphone className="w-3.5 h-3.5 text-brand-400 shrink-0" />
+        <span className="truncate">Click tabs inside phone to test WorkPulse & Land Survey!</span>
       </div>
     </div>
   );

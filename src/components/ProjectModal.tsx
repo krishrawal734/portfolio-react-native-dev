@@ -21,20 +21,20 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-10 bg-black/80 backdrop-blur-md overflow-y-auto">
       {/* Click outside backdrop to close */}
       <div className="fixed inset-0" onClick={onClose}></div>
 
       {/* Modal Dialog Card */}
-      <div className="relative w-full max-w-4xl max-h-[90vh] bg-slate-900 border border-slate-700/80 rounded-3xl shadow-2xl overflow-hidden flex flex-col z-10 animate-fadeIn">
+      <div className="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[90vh] bg-slate-900 border border-slate-700/80 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col z-10 animate-fadeIn my-auto">
         
         {/* Top Header Bar */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950/60 backdrop-blur-sm sticky top-0 z-20">
-          <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-20">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20 shrink-0">
               {project.category}
             </span>
-            <div className="flex items-center gap-1.5 text-xs text-slate-400">
+            <div className="flex items-center gap-1.5 text-xs text-slate-400 overflow-hidden">
               {project.platform.map((p) => (
                 <span key={p} className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[10px]">
                   {p}
@@ -45,7 +45,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           <button
             onClick={onClose}
-            className="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+            className="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors shrink-0 ml-2"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -53,23 +53,23 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Modal Scrollable Body */}
-        <div className="p-6 sm:p-8 space-y-6 overflow-y-auto">
-          {/* Main Title & Image Header */}
-          <div className="space-y-3">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        <div className="p-4 sm:p-8 space-y-5 sm:space-y-6 overflow-y-auto">
+          {/* Main Title & Description Header */}
+          <div className="space-y-2 sm:space-y-3">
+            <h2 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">
               {project.title}
             </h2>
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
               {project.description}
             </p>
           </div>
 
           {/* Stats strip */}
-          <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-950/80 border border-slate-800">
             {project.stats.map((s, idx) => (
-              <div key={idx} className="text-center">
-                <span className="text-xs text-slate-400 block">{s.label}</span>
-                <span className="text-lg sm:text-xl font-bold font-mono text-cyan-400">{s.value}</span>
+              <div key={idx} className="text-center min-w-0">
+                <span className="text-[10px] sm:text-xs text-slate-400 block truncate">{s.label}</span>
+                <span className="text-sm sm:text-xl font-bold font-mono text-cyan-400 break-words">{s.value}</span>
               </div>
             ))}
           </div>
@@ -82,7 +82,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               </h4>
               <ul className="space-y-2.5">
                 {project.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm text-slate-300">
+                  <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span>{feature}</span>
                   </li>
@@ -91,7 +91,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </div>
 
             {/* Expo Go & Demo QR Code Simulation */}
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-950 to-indigo-950/40 border border-indigo-900/40 flex flex-col justify-between">
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-slate-950 to-indigo-950/40 border border-indigo-900/40 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-semibold text-brand-300 uppercase tracking-wider flex items-center gap-1.5">
@@ -106,13 +106,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 </p>
               </div>
 
-              <div className="flex items-center gap-4 p-3 rounded-xl bg-slate-900 border border-slate-800">
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 p-3 rounded-xl bg-slate-900 border border-slate-800 text-center sm:text-left">
                 <div className="p-2 bg-white rounded-lg shrink-0">
-                  <QrCode className="w-12 h-12 text-slate-900" />
+                  <QrCode className="w-10 h-10 sm:w-12 sm:h-12 text-slate-900" />
                 </div>
-                <div className="text-xs space-y-1">
-                  <p className="font-semibold text-white">exp://u.expo.dev/{project.id}</p>
-                  <p className="text-[11px] text-slate-400">Open Camera on iOS or Expo Go on Android</p>
+                <div className="text-xs space-y-1 min-w-0">
+                  <p className="font-semibold text-white break-all text-[11px] sm:text-xs">exp://u.expo.dev/{project.id}</p>
+                  <p className="text-[10px] sm:text-[11px] text-slate-400">Open Camera on iOS or Expo Go on Android</p>
                   {project.expoSnackUrl && (
                     <a
                       href={project.expoSnackUrl}
@@ -134,14 +134,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Technologies & Native Modules
             </h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300 flex items-center gap-1.5"
+                  className="px-2.5 sm:px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-[11px] sm:text-xs font-mono text-slate-300 flex items-center gap-1.5"
                 >
-                  <Cpu className="w-3 h-3 text-cyan-400" />
-                  {tag}
+                  <Cpu className="w-3 h-3 text-cyan-400 shrink-0" />
+                  <span>{tag}</span>
                 </span>
               ))}
             </div>
@@ -149,7 +149,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Modal Action Buttons Footer */}
-        <div className="flex flex-wrap items-center justify-between gap-3 px-6 py-4 border-t border-slate-800 bg-slate-950/80">
+        <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 border-t border-slate-800 bg-slate-950/80">
           <div className="flex flex-wrap items-center gap-2">
             {project.demoUrl && (
               <a
@@ -177,7 +177,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold shadow-md transition-all ml-auto"
+            className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-all ml-auto"
           >
             Close Details
           </button>
